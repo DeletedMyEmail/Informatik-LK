@@ -1,7 +1,7 @@
 package de.kaitokuntatsu.random;
 
-import de.joshua.DataStructures.List;
 
+import de.kaitokuntatsu.datastructures.List;
 import java.util.Random;
 import java.util.Scanner;
 

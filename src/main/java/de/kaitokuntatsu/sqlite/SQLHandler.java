@@ -1,5 +1,7 @@
 package de.kaitokuntatsu.sqlite;
-import de.joshua.DataStructures.DBMS.*;
+
+
+import de.kaitokuntatsu.datastructures.DBMS.*;
 
 public class SQLHandler {
 

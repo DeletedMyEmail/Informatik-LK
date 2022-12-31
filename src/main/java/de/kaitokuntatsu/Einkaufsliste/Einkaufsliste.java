@@ -1,5 +1,6 @@
 package de.kaitokuntatsu.Einkaufsliste;
-import de.joshua.DataStructures.List;
+
+import de.kaitokuntatsu.datastructures.List;
 
 /**
  *  Einkaufsliste mit GUI?

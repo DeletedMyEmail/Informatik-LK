@@ -1,6 +1,6 @@
 package de.kaitokuntatsu.datastructures.Graph;
 
-import de.joshua.DataStructures.List;
+import de.kaitokuntatsu.datastructures.List;
 
 /**
  * <p>

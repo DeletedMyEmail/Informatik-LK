@@ -5,7 +5,7 @@ package de.kaitokuntatsu.random;
  * @version 2014-03-13
  */
 
-import de.joshua.DataStructures.ComparableContent;
+import de.kaitokuntatsu.datastructures.ComparableContent;
 /**
  * 03.03.2011
  */

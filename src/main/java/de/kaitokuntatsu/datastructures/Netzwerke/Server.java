@@ -24,8 +24,7 @@ package de.kaitokuntatsu.datastructures.Netzwerke;
  * @version 30.08.2016
  */
 
-import de.joshua.DataStructures.List;
-
+import de.kaitokuntatsu.datastructures.List;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;

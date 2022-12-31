@@ -1,6 +1,6 @@
 package de.kaitokuntatsu.random;
 
-import de.joshua.DataStructures.Stack;
+import de.kaitokuntatsu.datastructures.Stack;
 
 public class Palindrome {
 

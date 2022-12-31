@@ -1,7 +1,7 @@
 package de.kaitokuntatsu.random;
 
-import de.joshua.DataStructures.Queue;
-import de.joshua.DataStructures.Stack;
+import de.kaitokuntatsu.datastructures.Stack;
+import de.kaitokuntatsu.datastructures.Queue;
 
 public class ReversedNumbers {
 

@@ -1,11 +1,6 @@
-package de.kaitokuntatsu.random; /**
- * <p>Qualitaets- und UnterstuetzungsAgentur - Landesinstitut fuer Schule, Materialien zum schulinternen Lehrplan Informatik SII</p>
- *
- * @version 2014-03-13
- */
+package de.kaitokuntatsu.random;
 
-import de.joshua.DataStructures.BinaryTree;
-
+import de.kaitokuntatsu.datastructures.BinaryTree;
 import java.awt.*;
 import java.awt.event.ComponentAdapter;
 import java.awt.event.ComponentEvent;

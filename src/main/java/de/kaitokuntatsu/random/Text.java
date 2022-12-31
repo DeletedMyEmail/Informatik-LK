@@ -1,6 +1,6 @@
 package de.kaitokuntatsu.random;
-import de.joshua.DataStructures.*;
 
+import de.kaitokuntatsu.datastructures.List;
 import java.io.*;
 
 /**

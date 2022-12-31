@@ -1,6 +1,6 @@
 package de.kaitokuntatsu.random;
 
-import de.joshua.DataStructures.BinaryTree;
+import de.kaitokuntatsu.datastructures.BinaryTree;
 
 import java.awt.*;
 import java.awt.event.ComponentAdapter;

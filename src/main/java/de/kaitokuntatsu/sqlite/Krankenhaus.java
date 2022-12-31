@@ -1,6 +1,6 @@
 package de.kaitokuntatsu.sqlite;
 
-import de.joshua.DataStructures.DBMS.*;
+import de.kaitokuntatsu.datastructures.DBMS.*;
 
 // Aufgabe [WDH.DB.04] - Das de.joshua.sqlite.Krankenhaus
 public class Krankenhaus {

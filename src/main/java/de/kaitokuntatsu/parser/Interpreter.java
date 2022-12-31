@@ -25,16 +25,16 @@ public class Interpreter
         befehle.toFirst();
         while (befehle.hasAccess())
         {
-            switch (befehle.getContent().getTyp())
+            switch (befehle.getContent().typ())
             {
                 case "VW":
-                    stift.zeichneVorwaerts(befehle.getContent().getWert());
+                    stift.zeichneVorwaerts(befehle.getContent().wert());
                     break;
                 case "RE":
-                    stift.dreheRechts(befehle.getContent().getWert());
+                    stift.dreheRechts(befehle.getContent().wert());
                     break;
                 case "LI":
-                    stift.dreheRechts(befehle.getContent().getWert());
+                    stift.dreheRechts(befehle.getContent().wert());
                     break;
                 default:
                     break;

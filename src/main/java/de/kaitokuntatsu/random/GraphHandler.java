@@ -1,9 +1,8 @@
 package de.kaitokuntatsu.random;
 
-import de.joshua.DataStructures.Graph.Edge;
-import de.joshua.DataStructures.Graph.Graph;
-import de.joshua.DataStructures.Graph.Vertex;
-import de.joshua.DataStructures.List;
+
+import de.kaitokuntatsu.datastructures.Graph.*;
+import de.kaitokuntatsu.datastructures.List;
 
 /**
  * GraphHandler ist eine Klasse, welche das erstellen und durchsuchen der Abiturklasse {@link Graph} erleichtert.

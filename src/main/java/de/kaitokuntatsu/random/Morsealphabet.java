@@ -1,5 +1,6 @@
 package de.kaitokuntatsu.random;
-import de.joshua.DataStructures.BinaryTree;
+
+import de.kaitokuntatsu.datastructures.BinaryTree;
 
 /**
  * Lösungsansatz zur Aufgabe [NLD.BTR.08] - Morsealphabet
