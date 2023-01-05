@@ -8,47 +8,55 @@ public class ScannerAndParser {
     static final String[] COMMANDS = {"RE","LI", "WH", "VW"};
 
     public List<Befehl> parse(String pInput) {
-        return parse(pInput.split(" "), 0);
+        List<Befehl> lResult = new List<>();
+        parse(pInput.split(" "), lResult, 0);
+        return lResult;
     }
 
-    public List<Befehl> parse(String[] pPotentialCommands, int pStartIndex) {
-        List<Befehl> lCommands = new List<>();
-
-        for (int i = pStartIndex; i < pPotentialCommands.length; ++i) {
+    public int parse(String[] pPotentialCommands, List<Befehl> pParsedCommands, int pStartIndex) {
+        int i;
+        for (i = pStartIndex; i < pPotentialCommands.length; ++i) {
             if (isCommand(pPotentialCommands[i]) && i + 1 < pPotentialCommands.length) {
                 int lValue = parseToInt(pPotentialCommands[i+1]);
                 if (lValue == -1) {
-                    return null;
+                    System.out.println(1);
+                    return -1;
                 }
 
                 if (pPotentialCommands[i].equals("WH")) {
+
                     if (!pPotentialCommands[i+2].equals("[")) {
-                        return null;
+                        return -1;
                     }
 
-                    List<Befehl> lCommandsInLoop = parse(pPotentialCommands, i+3);
+                    List<Befehl> lCommandsInLoop = new List<>();
+                    int lNewIndex = parse(pPotentialCommands, lCommandsInLoop, i+3);
                     for (int j = 0; j < lValue; ++j) {
                         lCommandsInLoop.toFirst();
                         while (lCommandsInLoop.hasAccess()) {
-                            lCommands.append(lCommandsInLoop.getContent());
+                            pParsedCommands.append(lCommandsInLoop.getContent());
+                            lCommandsInLoop.next();
                         }
                     }
+
+                    i = lNewIndex;
                 }
                 else {
-                    lCommands.append(new Befehl(pPotentialCommands[i], lValue));
+                    pParsedCommands.append(new Befehl(pPotentialCommands[i], lValue));
                 }
 
                 ++i;
             }
             else if (pPotentialCommands[i].equals("]")) {
-                return lCommands;
+                return i;
             }
             else {
-                return null;
+                System.out.println(pPotentialCommands[i]);
+                return -1;
             }
         }
 
-        return lCommands;
+        return i;
     }
 
     private boolean isCommand(String pPotentialCommand) {
@@ -71,7 +79,7 @@ public class ScannerAndParser {
 
     public static void main(String[] args) throws IOException {
         ScannerAndParser sut = new ScannerAndParser();
-        List<Befehl> cmds = sut.parse("VW 5 WH 5 [ LI 5 ]");
+        List<Befehl> cmds = sut.parse("VW 5 WH 5 [ LI 5 RE 4 WH 2 [ VW 2 ] ]");
         cmds.toFirst();
         while (cmds.hasAccess()) {
             System.out.println(cmds.getContent().typ() + " + " + cmds.getContent().wert());
