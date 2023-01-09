@@ -7,19 +7,20 @@ public class ScannerAndParser {
 
     static final String[] COMMANDS = {"RE","LI", "WH", "VW"};
 
-    public List<Befehl> parse(String pInput) {
+    public static List<Befehl> parse(String pInput) {
         List<Befehl> lResult = new List<>();
-        parse(pInput.split(" "), lResult, 0);
+        if (parse(pInput.split(" "), lResult, 0) == -1) {
+            return null;
+        }
         return lResult;
     }
 
-    public int parse(String[] pPotentialCommands, List<Befehl> pParsedCommands, int pStartIndex) {
+    private static int parse(String[] pPotentialCommands, List<Befehl> pParsedCommands, int pStartIndex) {
         int i;
         for (i = pStartIndex; i < pPotentialCommands.length; ++i) {
             if (isCommand(pPotentialCommands[i]) && i + 1 < pPotentialCommands.length) {
                 int lValue = parseToInt(pPotentialCommands[i+1]);
                 if (lValue == -1) {
-                    System.out.println(1);
                     return -1;
                 }
 
@@ -51,7 +52,6 @@ public class ScannerAndParser {
                 return i;
             }
             else {
-                System.out.println(pPotentialCommands[i]);
                 return -1;
             }
         }
@@ -59,7 +59,7 @@ public class ScannerAndParser {
         return i;
     }
 
-    private boolean isCommand(String pPotentialCommand) {
+    private static boolean isCommand(String pPotentialCommand) {
         for (String lCmd : COMMANDS) {
             if (lCmd.equals(pPotentialCommand)) {
                 return true;
@@ -68,7 +68,7 @@ public class ScannerAndParser {
         return false;
     }
 
-    private int parseToInt(String pStr) {
+    private static int parseToInt(String pStr) {
         char[] lChars = pStr.toCharArray();
         for (char c : lChars) {
             if (c < '0' || c > '9')
@@ -78,8 +78,11 @@ public class ScannerAndParser {
     }
 
     public static void main(String[] args) throws IOException {
-        ScannerAndParser sut = new ScannerAndParser();
-        List<Befehl> cmds = sut.parse("VW 5 WH 5 [ LI 5 RE 4 WH 2 [ VW 2 ] ]");
+        List<Befehl> cmds = ScannerAndParser.parse("VW 5 WH 5 [ LI 5 RE 4 WH 2 [ VW 2 VW 1 ] ]");
+        if (cmds == null) {
+            System.out.println("Invalid word");
+            return;
+        }
         cmds.toFirst();
         while (cmds.hasAccess()) {
             System.out.println(cmds.getContent().typ() + " + " + cmds.getContent().wert());
