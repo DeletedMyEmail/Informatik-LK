@@ -3,7 +3,7 @@ package de.kaitokuntatsu.parser;
 import de.kaitokuntatsu.datastructures.*;
 import java.io.IOException;
 
-public class ScannerAndParser {
+public class GeometrischerParser {
 
     static final String[] COMMANDS = {"RE","LI", "WH", "VW"};
 
@@ -78,7 +78,7 @@ public class ScannerAndParser {
     }
 
     public static void main(String[] args) throws IOException {
-        List<Befehl> cmds = ScannerAndParser.parse("VW 5 WH 5 [ LI 5 RE 4 WH 2 [ VW 2 VW 1 ] ]");
+        List<Befehl> cmds = GeometrischerParser.parse("VW 5 WH 5 [ LI 5 RE 4 WH 2 [ VW 2 VW 1 ] ]");
         if (cmds == null) {
             System.out.println("Invalid word");
             return;
