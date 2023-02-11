@@ -114,8 +114,7 @@ public class GraphHandler
 
         List<Vertex> vertices = graph.getNeighbours(v);
         vertices.toFirst();
-        while (vertices.hasAccess())
-        {
+        while (vertices.hasAccess()) {
             if (graph.allEdgesMarked()) return false;
 
             if (!graph.getEdge(v, vertices.getContent()).isMarked())
